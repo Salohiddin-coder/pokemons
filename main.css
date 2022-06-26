@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-image: url("./pokemon-bgimg.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 100%; 
+  overflow-x: hidden;
+  font-family: 'Mukta', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 20px 0;
+  list-style-type: none;
+}
+
+.items{
+  margin: 0 10px;
+  margin-bottom: 30px;
+  padding: 40px;
+  background-color: #1e2761;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: inset 0 0 15px 10px #4203c9;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.items-id {
+  display: inline-block;
+  width: 30px;
+  padding: 5px;
+  font-size: 20px;
+  color: #fff1e1;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.item-name {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+  color: #ffd79d;
+  font-size: 25px;
+  border-bottom: 2px solid #d902ee;
+}
+
+.item-weight {
+  color: #f57e7e;
+}
+
+.item-type {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #daf2dc;
+}
+
+.item-details {
+  font-size: 18px;
+  color: #e8d71e;
+}
