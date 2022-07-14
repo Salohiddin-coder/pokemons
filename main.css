@@ -79,3 +79,14 @@ body {
   font-size: 18px;
   color: #e8d71e;
 }
+
+.selection {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 4px solid #e8d71e;
+  outline: none;
+  font-family: 'Mukta', sans-serif; 
+  font-size: 18px;
+}
