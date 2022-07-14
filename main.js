@@ -3531,3 +3531,17 @@ elSelection.addEventListener('change', function(){
   })
 })
 
+let types = [];
+
+for(item of pokemons) {
+  types.push(...item.type);
+}
+
+let optionValue = new Set(types);
+
+for(values of optionValue){
+  let options = document.createElement('option');
+  options.textContent = values
+  elSelection.appendChild(options);
+}
+
