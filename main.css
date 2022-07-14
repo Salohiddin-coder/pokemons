@@ -17,6 +17,10 @@ body {
   padding: 0 20px;
 }
 
+.selection-wrapper {
+  padding: 30px;
+}
+
 .box {
   display: flex;
   justify-content: space-evenly;

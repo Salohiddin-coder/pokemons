@@ -3477,39 +3477,57 @@ var pokemons = [
 
 var elList = document.querySelector('.js-list')
 
-for(i = 0; i < pokemons.length; i++){
-  elList.className = 'box';
-  var newItem = document.createElement('li');
-  newItem.className = 'items'
-  var newList = document.createElement('ul');
-  newList.className = 'wrapper'
-  newItem.appendChild(newList);
-  var itemId = document.createElement('li');
-  itemId.className = 'items-id'
-  itemId.textContent = pokemons[i].id;
-  newList.appendChild(itemId);
-  var itemName = document.createElement('li');
-  itemName.classList = 'item-name';
-  itemName.textContent = pokemons[i].name;
-  newList.appendChild(itemName);
-  var itemPic = document.createElement('li');
-  var itemImg = document.createElement('img');
-  itemImg.src = pokemons[i].img;
-  itemPic.appendChild(itemImg);
-  newList.appendChild(itemPic);
-  var itemWeight = document.createElement('li');
-  itemWeight.className = 'item-weight';
-  itemWeight.textContent = `Weight: ${pokemons[i].weight}`;
-  newList.appendChild(itemWeight);
-  var itemType = document.createElement('li');
-  itemType.className = 'item-type';
-  itemType.textContent = `Type: ${pokemons[i].type}`;
-  newList.appendChild(itemType);
-  var itemDetails = document.createElement('li');
-  itemDetails.className = 'item-details';
-  itemDetails.textContent = `Weaknesses: ${pokemons[i].weaknesses}`;
-  newList.appendChild(itemDetails);
-  
-  elList.appendChild(newItem);
+function creator(array, node) {
+  elList.innerHTML = "";
+  for(i = 0; i < array.length; i++){
+    elList.className = 'box';
+    var newItem = document.createElement('li');
+    newItem.className = 'items'
+    var newList = document.createElement('ul');
+    newList.className = 'wrapper'
+    newItem.appendChild(newList);
+    var itemId = document.createElement('li');
+    itemId.className = 'items-id'
+    itemId.textContent = array[i].id;
+    newList.appendChild(itemId);
+    var itemName = document.createElement('li');
+    itemName.classList = 'item-name';
+    itemName.textContent = array[i].name;
+    newList.appendChild(itemName);
+    var itemPic = document.createElement('li');
+    var itemImg = document.createElement('img');
+    itemImg.src = array[i].img;
+    itemPic.appendChild(itemImg);
+    newList.appendChild(itemPic);
+    var itemWeight = document.createElement('li');
+    itemWeight.className = 'item-weight';
+    itemWeight.textContent = `Weight: ${array[i].weight}`;
+    newList.appendChild(itemWeight);
+    var itemType = document.createElement('li');
+    itemType.className = 'item-type';
+    itemType.textContent = `Type: ${array[i].type}`;
+    newList.appendChild(itemType);
+    var itemDetails = document.createElement('li');
+    itemDetails.className = 'item-details';
+    itemDetails.textContent = `Weaknesses: ${array[i].weaknesses}`;
+    newList.appendChild(itemDetails);
+    
+    node.appendChild(newItem);
+  }
 }
+
+creator(pokemons, elList);
+
+let elSelection = document.querySelector(".js-select");
+elSelection.addEventListener('change', function(){
+  elList.innerHTML = "";
+  let result = [];
+  let selectedValue = elSelection.value;
+  pokemons.forEach(poc => {
+    if(poc.type.includes(selectedValue)){
+      result.push(poc);
+      creator(result,elList);
+    }
+  })
+})
 
